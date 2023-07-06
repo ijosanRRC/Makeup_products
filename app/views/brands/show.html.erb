@@ -1,0 +1,11 @@
+<h1><%= @brand.name %></h1>
+<p>Brand Code: <%= @brand.brand_code %></p>
+
+<h2>Products from this Brand:</h2>
+<ul>
+  <% @brand.products.each do |product| %>
+    <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
+</ul>
+
+

@@ -1,0 +1,4 @@
+<h1><%= @product.name %></h1>
+<p>Price: <%= @product.price %></p>
+<p>Brand: <%= link_to @product.brand.name ,brand_path(@product.brand)%></p>
+<p>Category: <%= link_to @product.category.name, category_path(@product.category) %></p>

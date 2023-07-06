@@ -1,0 +1,91 @@
+<h1>Products</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Brand</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.brand.name %></td>
+        <td><%= product.category.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Brands</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brands.each do |brand| %>
+      <tr>
+        <td><%= brand.name %></td>
+        <td><%= brand.brand_code %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Categories</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Reviews</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Product</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.content %></td>
+        <td><%= review.product.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Users</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

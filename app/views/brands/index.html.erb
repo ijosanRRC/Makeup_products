@@ -1,0 +1,29 @@
+<h1>Brands</h1>
+<%= form_tag brands_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Brands" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand Code</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brands.each do |brand| %>
+      <tr>
+        <td><%= link_to brand.name, brand_path(brand) %></td>
+        <td><%= brand.brand_code %></td>
+        <td><%= brand.created_at %></td>
+        <td><%= brand.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<footer>
+<%= paginate @brands %>
+</footer>
